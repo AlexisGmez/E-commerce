@@ -281,7 +281,7 @@ img {
 .main .main__shoppingCart .checkout {
   display: flex;
   justify-content: end;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 .main .main__shoppingCart .checkout a {
   background: var(--product-description);
