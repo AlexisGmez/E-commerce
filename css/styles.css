@@ -250,7 +250,7 @@ img {
   z-index: 5000;
   width: 100%;
   height: 100%;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   background: var(--header-background);
   text-align: center;
   transform: translate(100%);
@@ -276,7 +276,7 @@ img {
 .main .main__shoppingCart .total__sum {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 .main .main__shoppingCart .checkout {
   display: flex;
