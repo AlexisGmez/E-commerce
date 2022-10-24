@@ -9,32 +9,34 @@
     <title>Document</title>
 </head>
 <body> 
-    <header class="header" id="principal">
+    <header class="header observer" id="principal">
         <nav class="navbar">
-            <div class="navbar__menu">
-                <a href="#" class="nav__logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" fill="#e94959" class="nav__logo-icon">
-                      <title>Academlo Logo</title>
-                      <g>
-                        <g>
-                          <!-- <path d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z"></path> -->
-                          <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
-                          </path>
-                        </g>
-                      </g>
-                    </svg>STORE
-                </a>       
-                <ul class="navbar__menu--index">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#principal">Products</a></li>
-                </ul>
-
-            </div>
-            <div class="navbar__icons">
-
-                <a href="#"><i class='bx bx-moon'></i></a>
-                <a href="#"><i class='bx bx-shopping-bag'></i> <div>2</div></a>
-                <a href="#"><i class='bx bx-grid-alt'></i></a>
+            <div class="nav__container">
+                <div class="navbar__menu">
+                    <a href="#" class="nav__logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" fill="#e94959" class="nav__logo-icon">
+                          <title>Academlo Logo</title>
+                          <g>
+                            <g>
+                              <!-- <path d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z"></path> -->
+                              <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                              </path>
+                            </g>
+                          </g>
+                        </svg>STORE
+                    </a>       
+                    <ul class="navbar__menu--index">
+                        <li><a href="#principal" class="nav__home">Home</a></li>
+                        <li><a href="#products" class="nav__products">Products</a></li>
+                    </ul>
+    
+                </div>
+                <div class="navbar__icons">
+    
+                    <a href="#"><i class='bx bx-moon'></i></a>
+                    <a href="#"><i class='bx bx-shopping-bag'></i> <div class="cart__count">2</div></a>
+                    <a href="#"><i class='bx bx-grid-alt'></i></a>
+                </div>
             </div>
         </nav>
         <section class="header__content">   
@@ -54,7 +56,7 @@
             </div>
         </section>
     </header>
-    <main class="main" id="products">
+    <main class="main observer" id="products">
         
         <section class="main__filter">
             <div class="filter filter__showAll">

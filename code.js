@@ -37,8 +37,19 @@ const dropdownCart =()=>{
     const shoppingcartIcon = document.querySelector(".bx-shopping-bag");
     const shoppingcart = document.querySelector(".main__shoppingCart");
     const closeButton = document.querySelector(".bx-x");
-    shoppingcartIcon.addEventListener("click", e=>shoppingcart.classList.toggle("active"));
-    closeButton.addEventListener("click",e=>shoppingcart.classList.toggle("active"));
+    const cart__count = document.querySelector(".cart__count");
+
+    shoppingcartIcon.addEventListener("click", e=>{
+        e.preventDefault();
+        shoppingcart.classList.toggle("active");
+    });
+    closeButton.addEventListener("click",e=>{
+        e.preventDefault();
+        shoppingcart.classList.toggle("active");
+    });
+    cart__count.addEventListener("click",e=>{
+        shoppingcart.classList.toggle("active");
+    });
     
 }
 const swtichIcons =(element,classToEvaluate,icon,iconClassOne,iconClassTwo)=>{
@@ -51,7 +62,26 @@ const swtichIcons =(element,classToEvaluate,icon,iconClassOne,iconClassTwo)=>{
         icon.classList.add(`${iconClassOne}`);
     }
 }
+
+const navPosition =()=>{
+
+    const entries = document.querySelectorAll(".observer");
+    const home = document.querySelector(".nav__home");
+    const products = document.querySelector(".nav__products");
+
+    const ob = new IntersectionObserver(entries =>{    
+        if(entries[0].intersectionRatio>0.5){
+            home.classList.toggle("focus");
+        }else{
+            home.classList.toggle("focus");
+            products.classList.toggle("focus");
+        }
+    });
+    entries.forEach(item =>ob.observe(item));
+}
+
 stickyMenu();
 darkMode();
 dropdownMenu();
 dropdownCart();
+navPosition();

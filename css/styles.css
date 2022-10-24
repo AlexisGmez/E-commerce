@@ -59,29 +59,36 @@ img {
   margin: auto;
 }
 .header .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5000;
+  transition: 0.5s;
+}
+.header .navbar .nav__container {
+  background: none;
   max-width: 1250px;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 1.5rem;
-  position: fixed;
-  top: 0;
-  z-index: 5000;
-  transition: 0.5s;
 }
-.header .navbar .navbar__menu {
+.header .navbar .nav__container .navbar__menu {
   display: flex;
 }
-.header .navbar .navbar__menu .nav__logo {
+.header .navbar .nav__container .navbar__menu .nav__logo {
   display: flex;
   align-items: center;
   font-weight: 600;
   font-size: 14px;
 }
-.header .navbar .navbar__menu .nav__logo .nav__logo-icon {
+.header .navbar .nav__container .navbar__menu .nav__logo .nav__logo-icon {
   width: 2.5rem;
 }
-.header .navbar .navbar__menu .navbar__menu--index {
+.header .navbar .nav__container .navbar__menu .navbar__menu--index {
   position: fixed;
   right: 0;
   top: 0;
@@ -98,18 +105,18 @@ img {
   transform: translate(100%);
   transition: transform 0.5s;
 }
-.header .navbar .navbar__icons {
+.header .navbar .nav__container .navbar__icons {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.header .navbar .navbar__icons .bx {
+.header .navbar .nav__container .navbar__icons .bx {
   font-size: 1.2rem;
 }
-.header .navbar .navbar__icons a:nth-child(2) {
+.header .navbar .nav__container .navbar__icons a:nth-child(2) {
   position: relative;
 }
-.header .navbar .navbar__icons a:nth-child(2) div {
+.header .navbar .nav__container .navbar__icons a:nth-child(2) div {
   position: absolute;
   right: -5px;
   top: 10px;
@@ -181,6 +188,7 @@ img {
 }
 .header .stickyMenu {
   background: var(--header-background);
+  box-shadow: var(--shadow);
   width: 100%;
 }
 
@@ -188,7 +196,7 @@ img {
   max-width: 1250px;
   min-width: 360px;
   margin: auto;
-  padding: 2rem;
+  padding: 8rem 2rem;
 }
 .main .main__filter {
   display: grid;
@@ -344,6 +352,10 @@ img {
 
 .active {
   transform: translate(0) !important;
+}
+
+.focus {
+  color: red !important;
 }
 
 @media (min-width: 767px) {
