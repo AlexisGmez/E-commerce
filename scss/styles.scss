@@ -59,15 +59,15 @@ img{
         z-index: 5000;
         transition: .5s;
         .nav__container{
-            background: none;
             max-width: 1250px;
             display: flex;
             justify-content: space-between;
             width: 100%; 
             padding: 1.5rem;    
+            
             .navbar__menu{
                 display: flex;
-                
+                width: 30%;
                 .nav__logo{
                     
                     display: flex;
@@ -83,9 +83,7 @@ img{
                     position: fixed;
                     right: 0;
                     top: 0;
-    
-                    background: var(--header-background);
-    
+                    
                     height: 100%;
                     width: 100%;
                     padding: 8rem 0;
@@ -395,34 +393,36 @@ img{
     .header{
         height: 100vh;
         .navbar{
-            
-            .navbar__menu{
-                
-                align-items: center;
-                gap:4rem;
-                .navbar__menu--index{
-                    position: static;
-                    flex-direction: row;
-                    height: 0;
-                    width: 0;
-                    padding: 0;
+            .nav__container{
+                .navbar__menu{ 
+                    align-items: center;
+                    gap:4rem;
                     
-                    font-size: 16px;
-                    font-weight: normal;
-                    gap: 3rem;
-                    font-weight: 600;
-
-                    li:hover{
-                        color: #797979;
+                    .navbar__menu--index{
+                        position: static;
+                        flex-direction: row;
+                        height: 0;
+                        width: 0;
+                        padding: 0;
+                        
+                        font-size: 16px;
+                        font-weight: normal;
+                        gap: 3rem;
+                        font-weight: 600;
+    
+                        li:hover{
+                            color: #797979;
+                        }
+                        
                     }
-                    
+                }
+                .navbar__icons{
+                    .bx-grid-alt{
+                        display: none;
+                    }
                 }
             }
-            .navbar__icons{
-                .bx-grid-alt{
-                    display: none;
-                }
-            }
+            
         }
         .header__content{
             display: flex;

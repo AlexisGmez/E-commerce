@@ -69,7 +69,6 @@ img {
   transition: 0.5s;
 }
 .header .navbar .nav__container {
-  background: none;
   max-width: 1250px;
   display: flex;
   justify-content: space-between;
@@ -78,6 +77,7 @@ img {
 }
 .header .navbar .nav__container .navbar__menu {
   display: flex;
+  width: 30%;
 }
 .header .navbar .nav__container .navbar__menu .nav__logo {
   display: flex;
@@ -92,7 +92,6 @@ img {
   position: fixed;
   right: 0;
   top: 0;
-  background: var(--header-background);
   height: 100%;
   width: 100%;
   padding: 8rem 0;
@@ -365,11 +364,11 @@ img {
   .header {
     height: 100vh;
   }
-  .header .navbar .navbar__menu {
+  .header .navbar .nav__container .navbar__menu {
     align-items: center;
     gap: 4rem;
   }
-  .header .navbar .navbar__menu .navbar__menu--index {
+  .header .navbar .nav__container .navbar__menu .navbar__menu--index {
     position: static;
     flex-direction: row;
     height: 0;
@@ -380,10 +379,10 @@ img {
     gap: 3rem;
     font-weight: 600;
   }
-  .header .navbar .navbar__menu .navbar__menu--index li:hover {
+  .header .navbar .nav__container .navbar__menu .navbar__menu--index li:hover {
     color: #797979;
   }
-  .header .navbar .navbar__icons .bx-grid-alt {
+  .header .navbar .nav__container .navbar__icons .bx-grid-alt {
     display: none;
   }
   .header .header__content {
