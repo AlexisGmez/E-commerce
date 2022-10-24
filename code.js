@@ -12,9 +12,10 @@ const darkMode = () =>{
 }
 const stickyMenu =()=>{
     const navbar = document.querySelector(".navbar");
-    navbar.classList.add("stickyMenu");
+    
     window.addEventListener("scroll", (event) => {
         let scrollY = this.scrollY;
+        console.log(scrollY);
         scrollY !== 0 ? navbar.classList.add("stickyMenu") : navbar.classList.remove("stickyMenu");
        
     });
