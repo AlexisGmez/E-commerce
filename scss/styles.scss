@@ -102,6 +102,7 @@ img{
 
             .bx{
                 font-size: 1.2rem;
+                
             }
         }
     }
@@ -263,20 +264,56 @@ img{
     .main__shoppingCart{
         position: fixed;
         top: 0;
-        left: 0;
-        z-index: 6000;
+        right: 0;
+        z-index: 5000;
         width: 100%;
         height: 100%;
-        padding: 4rem 0;
+        padding: 4rem 1rem;
         background: var(--header-background);
         text-align: center;
         transform: translate(100%);
         transition: transform .5s;
-
+        display: flex;
+        flex-direction: column;
+        a{
+            font-size: 2rem;
+            align-self: end;
+           
+        }
         .added__elements{
             height: 100%;
             display: flex;
             flex-direction: column;
+            
+            .added__elements--empty{
+                
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        .total__sum{
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 0 0 0;
+        }
+        .checkout{
+            
+            display: flex;
+            justify-content: end;
+            padding: 2rem 0;
+            a{
+                background: var( --product-description);
+                font-size: 16px;
+                font-weight: 600;
+                padding: 1rem 1.8rem;
+                box-shadow: var(--shadow);
+                &:hover{
+                    background: var(--header-red);
+                    color: var(--product-description);
+                }
+            }
         }
     }
 
@@ -372,6 +409,7 @@ img{
             }
             .header__description{
                 order: 1;
+                
             }
         }
     }
@@ -386,6 +424,12 @@ img{
             width: 70%;
             margin: auto;
             
+        }
+        .main__shoppingCart{
+            
+            width: 30%;
+            transform: translate(1000%);
+
         }
     }
     .footer{
@@ -402,8 +446,6 @@ img{
     }
 }
 @media (min-width: 1000px){
-    
-
     .main{
         .main__products{
             grid-template-columns: repeat(3, 1fr);

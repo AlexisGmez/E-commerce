@@ -35,19 +35,11 @@ const dropdownMenu = ()=> {
 const dropdownCart =()=>{
     const shoppingcartIcon = document.querySelector(".bx-shopping-bag");
     const shoppingcart = document.querySelector(".main__shoppingCart");
+    const closeButton = document.querySelector(".bx-x");
+    shoppingcartIcon.addEventListener("click", e=>shoppingcart.classList.toggle("active"));
+    closeButton.addEventListener("click",e=>shoppingcart.classList.toggle("active"));
     
-    shoppingcartIcon.addEventListener("click", e=>{
-
-        
-        shoppingcart.classList.toggle("active");
-        shoppingcartIcon.style.position="relative";
-        shoppingcartIcon.style.zIndex="7000";
-        
-        swtichIcons(shoppingcart,"active",shoppingcartIcon,"bx-shopping-bag" , "bx-x");
-        
-    })
 }
-
 const swtichIcons =(element,classToEvaluate,icon,iconClassOne,iconClassTwo)=>{
 
     if (element.classList.contains(`${classToEvaluate}`)){
