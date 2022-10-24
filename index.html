@@ -8,9 +8,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
-<body>
-    
-    <header class="header">
+<body> 
+    <header class="header" id="principal">
         <nav class="navbar">
             <div class="navbar__menu">
                 <a href="#" class="nav__logo">
@@ -26,14 +25,15 @@
                     </svg>STORE
                 </a>       
                 <ul class="navbar__menu--index">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#principal">Products</a></li>
                 </ul>
 
             </div>
             <div class="navbar__icons">
+
                 <a href="#"><i class='bx bx-moon'></i></a>
-                <a href="#"><i class='bx bx-shopping-bag' ></i></a>
+                <a href="#"><i class='bx bx-shopping-bag'></i> <div>2</div></a>
                 <a href="#"><i class='bx bx-grid-alt'></i></a>
             </div>
         </nav>
@@ -102,6 +102,7 @@
                     <div class="icon__product"><i class='bx bx-plus'></i></div>
                 </div>
             </div>
+            
         </section>
         <section class="main__shoppingCart">
             <a href="#"><i class='bx bx-x'></i></a>

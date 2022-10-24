@@ -15,12 +15,15 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: var(--header-background);
 }
 body.darkmode{
     --header-background: #1f1d2a;
-    color: #fff;
+      color: #fff;
     --text-color: #fff;
     --header-red: #9adde0;
     --secondary-grey: #15141d;
@@ -102,8 +105,25 @@ img{
             gap: 1rem;
 
             .bx{
-                font-size: 1.2rem;
+                font-size: 1.2rem;   
+            }
+            a:nth-child(2){
+
                 
+                position: relative;
+                div{
+                    
+                    position: absolute;
+                    right: -5px;
+                    top: 10px;
+                    background: var(--text-color);
+                    color: var(--product-description);
+                    border-radius: 50%;
+                    font-size: 13px;
+                    text-align: center;
+                    width: 16px;
+                    height: 16px;
+                }
             }
         }
     }
@@ -438,11 +458,13 @@ img{
 
         .footer__content{
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding: 0 0 2rem 0 ;
         }
 
         .copyRigth{
-            padding: 4rem;
+            padding: 2rem ;
+            
             
         }
     }
