@@ -45,6 +45,7 @@ img{
 .header{
     
     max-width: 1250px;
+    min-width: 360px;
     margin: auto;
     .navbar{
         max-width: 1250px;
@@ -178,6 +179,7 @@ img{
 .main{
 
     max-width: 1250px;
+    min-width: 360px;
     margin: auto;
     padding: 2rem;
     
@@ -321,7 +323,7 @@ img{
 .footer{
     background: var(--secondary-grey);
     padding: 6.5rem 2rem 0;
-    
+    min-width: 360px;
     
     
     .footer__content{
