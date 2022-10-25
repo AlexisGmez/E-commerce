@@ -101,7 +101,6 @@ img{
     
                     transform: translate(100%);
                     transition: transform .5s;
-    
                 }
                 
             }
@@ -303,7 +302,7 @@ img{
         z-index: 5000;
         width: 100%;
         height: 100%;
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
         background: var(--header-background);
         text-align: center;
         transform: translate(100%);
@@ -360,6 +359,8 @@ img{
                         display: flex;
                         width: 100%;
                         justify-content: space-between;
+                        
+                       
                         .cart__button--add{
                             display: flex;
                             gap: 1rem;
@@ -511,8 +512,16 @@ img{
             width: 30%;
             transform: translate(1000%);
             .added__elements{
+
+                gap: 1rem;
                 .added__element{
                     grid-auto-rows: 7rem;
+                    padding: .5rem;
+                    .cart__content{
+                        gap: .2rem;
+                        padding: 0 1rem;
+                    }
+                    
                 }
             }
         }
