@@ -37,6 +37,7 @@ const loadingPage=()=>{
             cartShopping.push(...carLocalStorage);    
             addingProductsCartDom();
             countItemsCartDom();
+            totalSum();
         }
         addingProductsCartDom();
         
@@ -208,6 +209,7 @@ const countItemsCartDom =()=>{
 
 // suma total del pago y los items 
 const totalSum = () =>{
+    
     const totalItems=document.querySelector(".total__sum--items");
     const totalSum=document.querySelector(".total__sum--price");
 
