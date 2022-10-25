@@ -96,6 +96,7 @@ img {
   position: fixed;
   right: 0;
   top: 0;
+  background: var(--header-background);
   height: 100%;
   width: 100%;
   padding: 8rem 0;
@@ -457,6 +458,9 @@ img {
   .main .main__shoppingCart {
     width: 30%;
     transform: translate(1000%);
+  }
+  .main .main__shoppingCart .added__elements .added__element {
+    grid-auto-rows: 7rem;
   }
   .footer .footer__content {
     flex-direction: row;
