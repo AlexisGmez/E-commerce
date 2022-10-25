@@ -77,6 +77,7 @@ const dropdownMenu = ()=> {
     const menu = document.querySelector(".navbar__menu--index");
 
     iconMenu.addEventListener("click",e=>{
+        e.preventDefault();
         menu.classList.toggle("active");
         iconMenu.style.position="relative";
         iconShopping.style.position="relative";
