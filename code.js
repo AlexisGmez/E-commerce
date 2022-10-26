@@ -1,5 +1,22 @@
 "use strict";
+//variables
+const body = document.body;
+const navbar = document.querySelector(".navbar");
+const menu = document.querySelector(".navbar__menu--index");
+const shoppingcart = document.querySelector(".main__shoppingCart");
+const cart__count = document.querySelector(".cart__count");
+const container = document.querySelector(".main__products");
+const add__container = document.querySelector(".added__elements");
 
+
+//buttons
+
+
+
+const iconDarkMode = document.querySelector(".bx-moon");
+const shoppingcartIcon = document.querySelector(".bx-shopping-bag");
+const iconMenu = document.querySelector(".bx-grid-alt"); 
+const closeButton = document.querySelector(".bx-x");
 
 const products = [
     {
@@ -42,8 +59,8 @@ const loadingPage=()=>{
             totalSum();   
         }  
         if (localStorage.getItem("darkmode")==="true") {
-            const iconDarkMode = document.querySelector(".bx-moon");
-            document.body.classList.add("darkmode");
+            
+            body.classList.add("darkmode");
             iconDarkMode.classList.remove("bx-moon");
             iconDarkMode.classList.add(`${localStorage.getItem("icon")}`);
         }
@@ -56,9 +73,6 @@ const loadingPage=()=>{
 //aplico el modo obcuro
 const darkMode = () =>{
 
-    const iconDarkMode = document.querySelector(".bx-moon");
-    const body = document.body;
-    
     iconDarkMode.addEventListener("click", e=>{    
         e.preventDefault();
         
@@ -72,8 +86,7 @@ const darkMode = () =>{
 
 //aplico el menu fijo
 const stickyMenu =()=>{
-    const navbar = document.querySelector(".navbar");
-    
+       
     window.addEventListener("scroll", (event) => {
         let scrollY = this.scrollY;
         console.log(scrollY);
@@ -84,15 +97,13 @@ const stickyMenu =()=>{
 
 //deslizo el menu lateral
 const dropdownMenu = ()=> {
-    const iconMenu = document.querySelector(".bx-grid-alt");
-    const iconShopping = document.querySelector(".bx-shopping-bag");
-    const menu = document.querySelector(".navbar__menu--index");
+    
 
     iconMenu.addEventListener("click",e=>{
         e.preventDefault();
         menu.classList.toggle("active");
         iconMenu.style.position="relative";
-        iconShopping.style.position="relative";
+        shoppingcartIcon.style.position="relative";
         swtichIcons(menu,"active",iconMenu,"bx-grid-alt","bx-x");
     });
 
@@ -100,11 +111,7 @@ const dropdownMenu = ()=> {
 
 //deslizo el menu del carrito
 const dropdownCart =()=>{
-    const shoppingcartIcon = document.querySelector(".bx-shopping-bag");
-    const shoppingcart = document.querySelector(".main__shoppingCart");
-    const closeButton = document.querySelector(".bx-x");
-    const cart__count = document.querySelector(".cart__count");
-
+    
     shoppingcartIcon.addEventListener("click", e=>{
         e.preventDefault();
         shoppingcart.classList.toggle("active");
@@ -122,7 +129,7 @@ const dropdownCart =()=>{
 
 //ingreso los productos al dom dinamicamente
 const addingProductsDom =()=>{
-    const container = document.querySelector(".main__products");
+    
     products.forEach(element => {
         let html = `<div class="main__product ">
                         <img src="${element.image}" alt="">
@@ -154,8 +161,8 @@ const addingProductsToCartShopping = () =>{
 
 //// este metodo agrega, quita y elimina totalmente elementos del carrito
 const cartActionsButton = ()=>{
-    const container = document.querySelector(".main__shoppingCart");
-    container.addEventListener("click", e=>{
+    
+    shoppingcart.addEventListener("click", e=>{
         const buttonClicked = e.target.getAttribute("data-id");
         const validar = cartShopping.filter(item=>item.id==buttonClicked);
         if (e.target.classList[1] === "bx-plus") validar[0].addCount = validar[0].addCount+1;
@@ -170,7 +177,7 @@ const cartActionsButton = ()=>{
 //funcion para agregar los articulos al dom y esta funcion se llama dentro de addingProductsToCartShopping
 const addingProductsCartDom =(e)=>{
 
-    const add__container = document.querySelector(".added__elements");
+    
     let cant = getCountItems();
 
     if (cartShopping.length===0 || cant===0) {
@@ -215,9 +222,8 @@ const addingProductsCartDom =(e)=>{
 }
 //Pinto la notificacion de la cantidad de productos agregados
 const countItemsCartDom =()=>{
-    const count = document.querySelector(".cart__count");
-    
-    count.innerHTML = getCountItems();   
+     
+    cart__count.innerHTML = getCountItems();   
 }
 
 // suma total del pago y los items 
