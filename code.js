@@ -31,13 +31,21 @@ const cartShopping=[];
 
 //cuando recargo la pagina se guardan los cambios
 const loadingPage=()=>{
+
     document.addEventListener("DOMContentLoaded",e=>{
-        if (localStorage.length!==0) {    
+
+        if (localStorage.getItem("cart")!==null) {    
             const carLocalStorage = JSON.parse(localStorage.getItem("cart"));
             cartShopping.push(...carLocalStorage);    
             addingProductsCartDom();
             countItemsCartDom();
-            totalSum();
+            totalSum();   
+        }  
+        if (localStorage.getItem("darkmode")==="true") {
+            const iconDarkMode = document.querySelector(".bx-moon");
+            document.body.classList.add("darkmode");
+            iconDarkMode.classList.remove("bx-moon");
+            iconDarkMode.classList.add(`${localStorage.getItem("icon")}`);
         }
         addingProductsCartDom();
         
@@ -53,9 +61,13 @@ const darkMode = () =>{
     
     iconDarkMode.addEventListener("click", e=>{    
         e.preventDefault();
-        body.classList.toggle("darkmode");
+        
+        const active = body.classList.toggle("darkmode");
         swtichIcons(body,"darkmode",iconDarkMode,"bx-moon","bx-sun");
-    })
+        localStorage.setItem("icon",`${iconDarkMode.classList[1]}`);
+        localStorage.setItem("darkmode",`${active}`);
+
+    });
 }
 
 //aplico el menu fijo
