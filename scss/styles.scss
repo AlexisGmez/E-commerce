@@ -47,6 +47,22 @@ img{
 .text__color{
     color: var(--text-color);
 }
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #e94959;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .load{
+        width: 8%;
+        animation: loading infinite 2s;
+    }
+}
 .header{
     
     max-width: 1250px;
@@ -433,6 +449,18 @@ img{
     color: red !important;
 }
 
+@keyframes loading {
+    
+    0%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }   
+    100%{
+        transform: translateY(10px);
+    }
+}
 @media (min-width: 767px){
 
     body{

@@ -8,11 +8,7 @@ const cart__count = document.querySelector(".cart__count");
 const container = document.querySelector(".main__products");
 const add__container = document.querySelector(".added__elements");
 
-
-//buttons
-
-
-
+// variables buttons
 const iconDarkMode = document.querySelector(".bx-moon");
 const shoppingcartIcon = document.querySelector(".bx-shopping-bag");
 const iconMenu = document.querySelector(".bx-grid-alt"); 
@@ -46,8 +42,25 @@ const products = [
 ];
 const cartShopping=[];
 
+
+//loading Academlo
+const loadingAcademlo = () =>{
+    const containerLoading = document.querySelector('.loading');
+    window.addEventListener('load', ()=>{
+
+        setTimeout(()=>{
+            containerLoading.style.display = 'none';
+        },4000);
+
+    });
+    
+
+    
+
+}
+
 //cuando recargo la pagina se guardan los cambios
-const loadingPage=()=>{
+const refreshPage=()=>{
 
     document.addEventListener("DOMContentLoaded",e=>{
 
@@ -315,8 +328,8 @@ const navPosition =()=>{
     });
     entries.forEach(item =>ob.observe(item));
 }
-
-loadingPage();
+loadingAcademlo();
+refreshPage();
 stickyMenu();
 darkMode();
 dropdownMenu();
