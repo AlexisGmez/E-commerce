@@ -13,7 +13,7 @@ const iconDarkMode = document.querySelector(".bx-moon");
 const shoppingcartIcon = document.querySelector(".bx-shopping-bag");
 const iconMenu = document.querySelector(".bx-grid-alt"); 
 const closeButton = document.querySelector(".bx-x");
-
+const main__filter = document.querySelector('.main__filter');
 const products = [
     {
     id: 1,
@@ -143,20 +143,19 @@ const dropdownCart =()=>{
 //ingreso los productos al dom dinamicamente
 const addingProductsDom =()=>{
     
-    products.forEach(element => {
-        let html = `<div class="main__product ">
-                        <img src="${element.image}" alt="">
-                        <div class="product__description">
-                            <h3>$${element.price}</h3>
-                            <span>Stock: ${element.quantity}</span>
-                            <p class="text__color">${element.name}</p>
-                            <div class="icon__product"><i data-id=${element.id} class='bx bx-plus'></i></div>
-                        </div>
-                    </div> `;
-        container.innerHTML += html;
+    addingProducts(products);
+
+    main__filter.addEventListener('click', ( { target } ) =>{
+
+        if (target.className.includes('filter__showAll') || target.parentElement.className.includes('filter__showAll'))addingProducts(products);
+        if (target.className.includes('filter__hoodie') || target.parentElement.className.includes('filter__hoodie'))addingProducts(products.filter(item => item.name === 'Hoodies' ));
+        if (target.className.includes('filter__shirt') || target.parentElement.className.includes('filter__shirt'))addingProducts(products.filter(item => item.name === 'Shirts' ));
+        if (target.className.includes('filter__sweatshirts') || target.parentElement.className.includes('filter__sweatshirts'))addingProducts(products.filter(item => item.name === 'Sweatshirts' ));
+
     });
 
 }
+
 //manejo los eventos de los clicks para pintar las acciones en el dom
 const addingProductsToCartShopping = () =>{
     const buttons = document.querySelectorAll(".icon__product");  
@@ -187,6 +186,7 @@ const cartActionsButton = ()=>{
         localStorage.setItem("cart",JSON.stringify(cartShopping));
     });
 }
+
 //funcion para agregar los articulos al dom y esta funcion se llama dentro de addingProductsToCartShopping
 const addingProductsCartDom =(e)=>{
 
@@ -233,10 +233,28 @@ const addingProductsCartDom =(e)=>{
         });
     }
 }
+
 //Pinto la notificacion de la cantidad de productos agregados
 const countItemsCartDom =()=>{
      
     cart__count.innerHTML = getCountItems();   
+}
+
+//algoritmo para pintar los articulos en el dom
+const addingProducts = (products) =>{
+    container.innerHTML = '';
+    products.forEach(element => {
+        let html = `<div class="main__product">
+                        <img src="${element.image}" alt="">
+                        <div class="product__description">
+                            <h3>$${element.price}</h3>
+                            <span>Stock: ${element.quantity}</span>
+                            <p class="text__color">${element.name}</p>
+                            <div class="icon__product"><i data-id=${element.id} class='bx bx-plus'></i></div>
+                        </div>
+                    </div> `;
+        container.innerHTML += html;
+    });
 }
 
 // suma total del pago y los items 
@@ -254,6 +272,7 @@ const totalSum = () =>{
     
     
 }
+
 //algoritmo para calcular la cantidad de elementos agregados al carrito
 const getCountItems = () =>{
     let totalItems = 0;
@@ -262,6 +281,7 @@ const getCountItems = () =>{
     });
     return totalItems;
 }
+
 //Algoritmo para agregar elementos al array cartShopping y al local storage
 const addToCartAlgorithm = (e)=>{
     const producto = products.filter(item=>item.id===parseInt(e.target.getAttribute("data-id")));
@@ -298,6 +318,7 @@ const addToCartAlgorithm = (e)=>{
              
     } 
 }
+
 //funcion para cambiar el icono al dar un click
 const swtichIcons =(element,classToEvaluate,icon,iconClassOne,iconClassTwo)=>{
 
@@ -309,7 +330,6 @@ const swtichIcons =(element,classToEvaluate,icon,iconClassOne,iconClassTwo)=>{
         icon.classList.add(`${iconClassOne}`);
     }
 }
-
 
 //funcion para saber la posicion en la que estoy en el dom y ubicarla en el navbar
 const navPosition =()=>{
@@ -328,6 +348,7 @@ const navPosition =()=>{
     });
     entries.forEach(item =>ob.observe(item));
 }
+
 loadingAcademlo();
 refreshPage();
 stickyMenu();
@@ -338,4 +359,5 @@ navPosition();
 addingProductsDom();
 addingProductsToCartShopping();
 cartActionsButton();
+finterItems();
 
