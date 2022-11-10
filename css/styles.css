@@ -230,6 +230,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  cursor: pointer;
 }
 .main .main__filter .filter:not(:last-child) {
   border-right: 1px solid var(--border-color);
@@ -290,6 +291,9 @@ img {
 }
 .main .main__products .main__product .product__description p {
   font-weight: 600;
+}
+.main .main__products .animation {
+  transform: translateX(10px);
 }
 .main .main__shoppingCart {
   position: fixed;

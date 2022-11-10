@@ -177,7 +177,10 @@ const cartActionsButton = ()=>{
     shoppingcart.addEventListener("click", e=>{
         const buttonClicked = e.target.getAttribute("data-id");
         const validar = cartShopping.filter(item=>item.id==buttonClicked);
-        if (e.target.classList[1] === "bx-plus") validar[0].addCount = validar[0].addCount+1;
+        if (e.target.classList[1] === "bx-plus"){
+            if (validar[0].addCount === validar[0].quantity) return
+            validar[0].addCount = validar[0].addCount+1;
+        }
         if (e.target.classList[1] === "bx-minus") validar[0].addCount = validar[0].addCount-1;
         if (e.target.classList[1] === "bx-trash") validar[0].addCount = 0;
         addingProductsCartDom();   
@@ -312,6 +315,8 @@ const addToCartAlgorithm = (e)=>{
             }); 
             localStorage.setItem("cart",JSON.stringify(cartShopping));
         }else{
+
+            if (validation[0].addCount === validation[0].quantity) return
             validation[0].addCount = validation[0].addCount+1;
             localStorage.setItem("cart",JSON.stringify(cartShopping));
         }
@@ -359,5 +364,5 @@ navPosition();
 addingProductsDom();
 addingProductsToCartShopping();
 cartActionsButton();
-finterItems();
+
 

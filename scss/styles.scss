@@ -237,12 +237,14 @@ img{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2,4rem);
         text-align: center;
+        
         .filter{
             
             display: flex;
             flex-direction: column;
             gap: .5rem;
-
+            cursor: pointer;
+            
             &:not(:last-child){
                 border-right: 1px solid var(--border-color);
             }
@@ -261,21 +263,22 @@ img{
         grid-auto-rows: auto;
         gap: 2rem;
         padding: 2rem 0;
-
+        
         .main__product{
             background: var(--secondary-grey);
             width: 70%;
             max-width: 350px;
             margin: auto;
             border-radius: .5rem;
+           
             cursor: pointer;
+   
             img{
                 transition: transform .5s;
                 &:hover{
                     transform: translateY(-.5rem);
                 }
             }
-            
             .product__description{
                 position: relative;
                 background-color: var(--product-description);
@@ -308,6 +311,9 @@ img{
                     font-weight: 600;
                 }
             }
+        }
+        .animation{
+            transform: translateX(10px);
         }
     }
     .main__shoppingCart{
